@@ -4,6 +4,9 @@ public class DartBoard : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.name);
+        if (other.CompareTag("Dart"))
+        {
+            Debug.Log("Dart");
+        }
     }
 }
