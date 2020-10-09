@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class DartBoard : MonoBehaviour
 {
@@ -9,5 +6,4 @@ public class DartBoard : MonoBehaviour
     {
         Debug.Log(other.name);
     }
-    
 }
