@@ -6,7 +6,12 @@ public class DartBoard : MonoBehaviour
     {
         if (other.CompareTag("Dart"))
         {
-            Debug.Log("Dart");
+            Rigidbody dartRigidbody = other.GetComponent<Rigidbody>();
+            Dart dart = other.GetComponent<Dart>();
+            
+            dartRigidbody.useGravity = false;
+            dartRigidbody.isKinematic = true;
+            dart.IsThrowing = false;
         }
     }
 }
