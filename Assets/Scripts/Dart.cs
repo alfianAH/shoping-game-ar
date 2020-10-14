@@ -7,12 +7,19 @@ public class Dart : MonoBehaviour
     [SerializeField] private bool isThrowing;
     [SerializeField] private ControllerManager controller;
     [SerializeField] private Slider speedSlider;
-    [SerializeField] public float height, 
+    [SerializeField] private float height, 
         gravity = 9.81f,
         throwVelocity,
         v0Z, v0Y;
     
     private Rigidbody dartRigidbody;
+    [SerializeField] private bool isNotUsed;
+
+    public bool IsNotUsed
+    {
+        get => isNotUsed;
+        set => isNotUsed = value;
+    }
     
     public bool IsThrowing
     {
@@ -28,12 +35,9 @@ public class Dart : MonoBehaviour
 
     private void Update()
     {
-        speedSlider.onValueChanged.AddListener(delegate
-        {
-            throwVelocity = speedSlider.value;
-            CalculateV0();
-        });
-        
+        throwVelocity = speedSlider.value;
+        CalculateV0();
+
         // Rotate dart when falling down
         if (dartRigidbody.velocity.y <= 0 && isThrowing && !dartRigidbody.isKinematic)
         {
