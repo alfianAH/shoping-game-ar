@@ -30,11 +30,11 @@ public class Dart : MonoBehaviour
     private void Start()
     {
         dartRigidbody = GetComponent<Rigidbody>();
-        height = transform.position.y;
     }
 
     private void Update()
     {
+        height = transform.position.y;
         throwVelocity = speedSlider.value;
         CalculateV0();
 
