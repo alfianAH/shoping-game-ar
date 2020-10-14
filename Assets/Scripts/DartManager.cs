@@ -27,7 +27,7 @@ public class DartManager : MonoBehaviour
             if (!darts[i].IsNotUsed)
             {
                 SetActiveDart(i);
-                dartsLeft.text = $"Dart(s): {i}";
+                dartsLeft.text = $"Dart(s): {i+1}";
                 break;
             }
         }
